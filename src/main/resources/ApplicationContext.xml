@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean：代表管理一个对象
+            id：唯一标识
+            class：类全限定名称
+     -->
+    <!-- 创建 userInfoDao 对象 -->
+    <!--<bean id="userInfoDao" class="org.example.dao.impl.UserInfoDaoImpl" />-->
+
+    <!-- 创建 userInfoService 对象 -->
+    <!--<bean id="userInfoService" class="org.example.service.impl.UserInfoServiceImpl">-->
+        <!-- DI注入1：调用无参构造 + setter方法创建 -->
+        <!--<property name="userInfoDao" ref="userInfoDao" />-->
+        <!-- DI注入2：构造器创建 -->
+        <!--<constructor-arg name="userInfoDao" ref="userInfoDao" />-->
+        <!--<constructor-arg index="0" ref="userInfoDao" />-->
+    <!--</bean>-->
+
+    <!-- 扫描包 -->
+    <context:component-scan base-package="org.example.dao,org.example.service" />
+
+</beans>
